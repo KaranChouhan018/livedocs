@@ -10,7 +10,7 @@ import { currentUser } from '@clerk/nextjs/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { Spotlight } from '@/components/ui/spotlight-new';
+import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision';
 
 const Home = async () => {
   const clerkUser = await currentUser();
@@ -22,6 +22,7 @@ const Home = async () => {
     
 
     <main className="home-container">
+      <BackgroundBeamsWithCollision/>
       
   
       <Header className="sticky left-0 top-0">
@@ -34,7 +35,7 @@ const Home = async () => {
       </Header>
 
       {roomDocuments.data.length > 0 ? (
-        <div className="document-list-container">
+        <div className="document-list-container z-50 ">
           <div className="document-list-title">
             <h3 className="text-28-semibold">All documents</h3>
             <AddDocumentBtn 
